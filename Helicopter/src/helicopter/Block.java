@@ -17,7 +17,7 @@ public class Block extends JComponent{
     int block_width = 100;
     int block_height = 300;
     
-    int x = 0;
+    int x = 0; 
     int y = 0;
     
     public Block(){
