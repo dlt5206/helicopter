@@ -5,6 +5,8 @@
  */
 package helicopter;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 /**
  *
@@ -20,7 +22,17 @@ public class Home extends JPanel {
     public Home() {
         setLayout(null);
         setSize(FRAME_HEIGHT, FRAME_WIDTH);
-        
-        
+        start.setBounds(400, 400, 100, 100); 
+        add(start);
+        start.addActionListener( new ActionListener() { 
+            public void actionPerformed(ActionEvent e) { 
+                startGame();
+            } 
+        });
+        setVisible(true);
+    }
+    
+    public void startGame() {
+        setVisible(false);
     }
 }
