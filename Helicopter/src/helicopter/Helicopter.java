@@ -5,17 +5,33 @@
  */
 package helicopter;
 
+import javax.swing.*;
+
 /**
  *
  * @author dlt5206
  */
-public class Helicopter {
+public class Helicopter extends JFrame {
+    
+    private Home homePanel = new Home(); 
+    private final static int FRAME_HEIGHT = 800;
+    private final static int FRAME_WIDTH = 800;
+    
+    public Helicopter() {
+        setLayout(null);
+        add(homePanel);
+        setSize(FRAME_HEIGHT, FRAME_WIDTH);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(true);
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Helicopter heli = new Helicopter();
+        heli.setVisible(true); 
     }
     
 }
