@@ -6,15 +6,20 @@
 package helicopter;
 
 import javax.swing.*;
+import java.awt.*;
+
 
 /**
  *
  * @author nss5161
  */
-public class Ship extends JComponent{
-    int gravity;
-    int posY;
-    int posX;
+public class Ship extends Rectangle {
+    
+    private int gravity;
+    private int y;
+    private int x;
+    private int width;
+    private int height;
     
     
     
