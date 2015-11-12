@@ -17,6 +17,7 @@ public class Helicopter extends JFrame {
     private final static int FRAME_HEIGHT = 800;
     private final static int FRAME_WIDTH = 800;
     
+    
     public Helicopter() {
         setLayout(null);
         add(homePanel);
