@@ -18,12 +18,19 @@ public class Ship extends Rectangle {
     private int gravity;
     private int y;
     private int x;
-    private int width;
-    private int height;
+    private final int WIDTH = 86;
+    private final int HEIGHT = 57;
     
+    public Ship(){
+        x = 50;
+        y = 400;
+        
+    }
     
-    
-    
-    
+    protected void paintComponent(Graphics g){
+        g.drawRect(x, y, WIDTH, HEIGHT);
+        g.fillRect(x, y, WIDTH, HEIGHT);
+        
+    }
 }
 
