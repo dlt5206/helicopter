@@ -8,25 +8,30 @@ package helicopter;
 import java.awt.Graphics;
 import javax.swing.*;
 import java.awt.*;
+import java.util.*;
 
 
 /**
  *
  * @author nss5161
  */
-public class Block extends Rectangle {
+public class Block extends JComponent {
     
-    private int width = 100; 
-    private int height = 100;
-    private int x = 0; 
-    private int y = 0;
+    private int width = 50; 
+    private int height = 250;
+    private int x = 750; 
+    private int y = 200;
     
     public Block(){
         
     }
     
-    public void paint(Graphics g){
-        g.drawRect(x, y, width, height);
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+        
         g.fillRect(x, y, width, height);
+        g.setColor(Color.BLACK);
+        
+        
     }
 }

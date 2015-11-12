@@ -7,13 +7,14 @@ package helicopter;
 
 import javax.swing.*;
 import java.awt.*;
-
-
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
 /**
  *
  * @author nss5161
  */
-public class Ship extends Rectangle {
+public class Ship extends JComponent {
     
     private int gravity;
     private int y;
@@ -22,15 +23,14 @@ public class Ship extends Rectangle {
     private final int HEIGHT = 57;
     
     public Ship(){
-        x = 50;
-        y = 400;
         
     }
     
-    protected void paintComponent(Graphics g){
-        g.drawRect(x, y, WIDTH, HEIGHT);
-        g.fillRect(x, y, WIDTH, HEIGHT);
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
         
-    }
+        Image myImage = Toolkit.getDefaultToolkit().getImage("images/ship.png");
+        g.drawImage(myImage, 0, 0, this);
+    } 
 }
 
