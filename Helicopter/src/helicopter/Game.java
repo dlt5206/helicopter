@@ -8,36 +8,35 @@ package helicopter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+
 /**
  *
  * @author dlt5206
  */
-public class Home extends JPanel {
+public class Game extends JPanel {
     
-    private JButton start = new JButton("Start");
-    private Game gamePanel = new Game();
+    private Ship theShip;
+    private Block theBlock;
+    private Timer t;
+    private JButton resetButton = new JButton("Reset Game");
+    private JButton endButton = new JButton("End Game");
     private final static int FRAME_HEIGHT = 800;
     private final static int FRAME_WIDTH = 800;
     
-    
-    public Home(Helicopter heli) {
+    public Game() {
         setLayout(null);
         setSize(FRAME_HEIGHT, FRAME_WIDTH);
-        start.setBounds(683, 658, 100, 100); 
-        add(start);
-        add(gamePanel);
-        start.addActionListener( new ActionListener() { 
+        endButton.setBounds(683, 658, 100, 100);
+        add(endButton);
+        endButton.addActionListener( new ActionListener() { 
             public void actionPerformed(ActionEvent e) { 
-                startGame(heli);
+                endGame();
             } 
         });
-        setVisible(true);
+        setVisible(false);
     }
     
-    public void startGame(Helicopter heli) {
-        setVisible(false);
-        heli.add(gamePanel);
-        gamePanel.setVisible(true);
-        repaint();
+    public void endGame() {
+        System.exit(0); 
     }
 }

@@ -13,14 +13,13 @@ import javax.swing.*;
  */
 public class Helicopter extends JFrame {
     
-    private Home homePanel = new Home(); 
     private final static int FRAME_HEIGHT = 800;
     private final static int FRAME_WIDTH = 800;
     
     
     public Helicopter() {
         setLayout(null);
-        add(homePanel);
+        //dd(homePanel);
         setSize(FRAME_HEIGHT, FRAME_WIDTH); 
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -32,6 +31,8 @@ public class Helicopter extends JFrame {
      */
     public static void main(String[] args) {
         Helicopter heli = new Helicopter();
+        Home homePanel = new Home(heli);
+        heli.add(homePanel);
         heli.setVisible(true); 
     }
     
