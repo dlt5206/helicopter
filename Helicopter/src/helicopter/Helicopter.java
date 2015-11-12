@@ -19,7 +19,6 @@ public class Helicopter extends JFrame {
     
     public Helicopter() {
         setLayout(null);
-        //dd(homePanel);
         setSize(FRAME_HEIGHT, FRAME_WIDTH); 
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

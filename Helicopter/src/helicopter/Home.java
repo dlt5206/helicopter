@@ -23,7 +23,7 @@ public class Home extends JPanel {
     public Home(Helicopter heli) {
         setLayout(null);
         setSize(FRAME_HEIGHT, FRAME_WIDTH);
-        start.setBounds(683, 658, 100, 100); 
+        start.setBounds(683, 661, 100, 100); 
         add(start);
         add(gamePanel);
         start.addActionListener( new ActionListener() { 
