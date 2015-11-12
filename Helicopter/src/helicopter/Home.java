@@ -22,7 +22,7 @@ public class Home extends JPanel {
     public Home() {
         setLayout(null);
         setSize(FRAME_HEIGHT, FRAME_WIDTH);
-        start.setBounds(683, 658, 100, 100); 
+        start.setBounds(683, 661, 100, 100); 
         add(start);
         start.addActionListener( new ActionListener() { 
             public void actionPerformed(ActionEvent e) { 
