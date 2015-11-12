@@ -26,7 +26,7 @@ public class Game extends JPanel {
     public Game() {
         setLayout(null);
         setSize(FRAME_HEIGHT, FRAME_WIDTH);
-        endButton.setBounds(683, 658, 100, 100);
+        endButton.setBounds(683, 661, 100, 100);
         add(endButton);
         endButton.addActionListener( new ActionListener() { 
             public void actionPerformed(ActionEvent e) { 
