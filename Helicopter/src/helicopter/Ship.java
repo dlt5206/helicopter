@@ -16,7 +16,7 @@ import java.awt.event.*;
  */
 public class Ship extends JComponent {
     
-    private int gravity;
+    private int gravity = 20;
     private int y;
     private int x;
     private final int WIDTH = 86;
@@ -32,7 +32,7 @@ public class Ship extends JComponent {
         
         Image myImage = Toolkit.getDefaultToolkit().getImage("images/ship.png");
         g.drawImage(myImage, 0, 0, this);
-        
+       
     } 
     
     public void setX(int initX) {
@@ -51,5 +51,8 @@ public class Ship extends JComponent {
         return y;
     }
     
+    public int getGravity() {
+        return gravity;
+    }
 }
 

@@ -33,7 +33,7 @@ public class Game extends JPanel implements ActionListener {
     private Block blk;
     
     public Game() {
-        t = new Timer(100, this);
+        t = new Timer(50, this);
         setLayout(null);
         setSize(FRAME_HEIGHT, FRAME_WIDTH);
         endButton.setBounds(683, 660, 100, 100);
@@ -59,15 +59,20 @@ public class Game extends JPanel implements ActionListener {
         add(theShip);
         theShip.setBounds(x, y, 86, 57);
         
-        t.start();
+        
         
         this.addMouseListener(new MouseAdapter() {
-            public void mousePressed(MouseEvent arg0) {
+            public void mouseClicked(MouseEvent arg0) {
                 y = y - 10;
                 theShip.setY(y);
+                if (theShip.getY() < 100) {
+                    t.stop(); 
+                    JOptionPane.showMessageDialog(null, "Game Over");
+                }
+                repaint();
             }
         });
-
+        
     }
     
     public void paintComponent(Graphics g) {
@@ -79,6 +84,7 @@ public class Game extends JPanel implements ActionListener {
         
         blk = new Block();
         blk.paintComponent(g);
+        
         
         t.start();
 
