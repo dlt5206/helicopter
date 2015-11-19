@@ -34,6 +34,7 @@ public class Game extends JPanel implements ActionListener {
     
     public Game() {
         t = new Timer(50, this);
+        t.start();
         setLayout(null);
         setSize(FRAME_HEIGHT, FRAME_WIDTH);
         endButton.setBounds(683, 660, 100, 100);
@@ -63,9 +64,9 @@ public class Game extends JPanel implements ActionListener {
         
         this.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent arg0) {
-                y = y - 10;
+                y = y - 50;
                 theShip.setY(y);
-                if (theShip.getY() < 100) {
+                if (theShip.getY() < 80) {
                     t.stop(); 
                     JOptionPane.showMessageDialog(null, "Game Over");
                 }
@@ -77,6 +78,7 @@ public class Game extends JPanel implements ActionListener {
     
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        requestFocusInWindow();
         g.setColor(Color.BLUE);
         
         g.fillRect(0, 0, 800, 100);
@@ -86,7 +88,6 @@ public class Game extends JPanel implements ActionListener {
         blk.paintComponent(g);
         
         
-        t.start();
 
     }
     
@@ -105,6 +106,12 @@ public class Game extends JPanel implements ActionListener {
             t.start();
         }
         if (obj == t) {
+            y = y + 7;
+            theShip.setY(y);
+            if (theShip.getY() > 630) {
+                t.stop(); 
+                JOptionPane.showMessageDialog(null, "Game Over");
+            }
             repaint();
         }
     }
