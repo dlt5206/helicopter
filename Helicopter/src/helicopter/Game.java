@@ -10,13 +10,16 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.Graphics;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 
 /**
  *
  * @author dlt5206
  */
-public class Game extends JPanel {
+public class Game extends JPanel implements ActionListener {
     
     private int x = 100;
     private int y = 350;
@@ -30,6 +33,7 @@ public class Game extends JPanel {
     private Block blk;
     
     public Game() {
+        t = new Timer(100, this);
         setLayout(null);
         setSize(FRAME_HEIGHT, FRAME_WIDTH);
         endButton.setBounds(683, 660, 100, 100);
@@ -51,9 +55,18 @@ public class Game extends JPanel {
         setVisible(false);
 
         
-        theShip = new Ship();
+        theShip = new Ship(x, y);
         add(theShip);
+        theShip.setBounds(x, y, 86, 57);
         
+        t.start();
+        
+        this.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent arg0) {
+                y = y - 10;
+                theShip.setY(y);
+            }
+        });
 
     }
     
@@ -67,7 +80,7 @@ public class Game extends JPanel {
         blk = new Block();
         blk.paintComponent(g);
         
-        theShip.setBounds(x, y, 86, 57);
+        t.start();
 
     }
     
@@ -79,5 +92,16 @@ public class Game extends JPanel {
     public void resetGame() {
         
     }
+    
+    public void actionPerformed(ActionEvent evt) {
+        Object obj = evt.getSource();
+        if  (obj == theShip) {
+            t.start();
+        }
+        if (obj == t) {
+            repaint();
+        }
+    }
+  
 }
 

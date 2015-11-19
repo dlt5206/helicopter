@@ -22,8 +22,9 @@ public class Ship extends JComponent {
     private final int WIDTH = 86;
     private final int HEIGHT = 57;
     
-    public Ship(){
-        
+    public Ship(int initX, int initY){
+        x = initX;
+        y = initY;
     }
     
     public void paintComponent(Graphics g){
@@ -31,6 +32,24 @@ public class Ship extends JComponent {
         
         Image myImage = Toolkit.getDefaultToolkit().getImage("images/ship.png");
         g.drawImage(myImage, 0, 0, this);
+        
     } 
+    
+    public void setX(int initX) {
+        x = initX;
+    }
+    
+    public int getX() {
+        return x;
+    }
+    
+    public void setY(int initY) {
+        y = initY;
+    }
+    
+    public int getY() {
+        return y;
+    }
+    
 }
 
