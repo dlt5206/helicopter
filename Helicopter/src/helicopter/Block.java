@@ -18,7 +18,7 @@ import java.util.*;
 public class Block extends JComponent {
     
     private int width = 50; 
-    private int height = 250;
+    private int height = 220;
     private int x = 750; 
     private int y = 200;
     
