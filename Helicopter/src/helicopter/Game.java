@@ -22,7 +22,7 @@ import java.awt.event.MouseListener;
 public class Game extends JPanel implements ActionListener {
     
     private int x = 100;
-    private int y = 350;
+    private int y = 300;
     private Ship theShip;
     private Block theBlock;
     private Timer t;
@@ -66,7 +66,7 @@ public class Game extends JPanel implements ActionListener {
             public void mouseClicked(MouseEvent arg0) {
                 y = y - 50;
                 theShip.setY(y);
-                if (theShip.getY() < 80) {
+                if (theShip.getY() < 60) {
                     t.stop(); 
                     JOptionPane.showMessageDialog(null, "Game Over");
                 }
@@ -74,6 +74,10 @@ public class Game extends JPanel implements ActionListener {
             }
         });
         
+        
+        blk = new Block();
+        blk.setBounds(750, 200, 50, 220);
+        add(blk);
     }
     
     public void paintComponent(Graphics g) {
@@ -84,8 +88,8 @@ public class Game extends JPanel implements ActionListener {
         g.fillRect(0, 0, 800, 100);
         g.fillRect(0, 660, 800, 100);
         
-        blk = new Block();
-        blk.paintComponent(g);
+        //blk = new Block();
+        //blk.paintComponent(g);
         
         
 
@@ -108,7 +112,7 @@ public class Game extends JPanel implements ActionListener {
         if (obj == t) {
             y = y + 7;
             theShip.setY(y);
-            if (theShip.getY() > 630) {
+            if (theShip.getY() > 640) {
                 t.stop(); 
                 JOptionPane.showMessageDialog(null, "Game Over");
             }
