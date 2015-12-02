@@ -88,8 +88,8 @@ public class Game extends JPanel implements ActionListener {
         g.fillRect(0, 0, 800, 100);
         g.fillRect(0, 660, 800, 100);
         
-        //blk = new Block();
-        //blk.paintComponent(g);
+        blk = new Block();
+        blk.paintComponent(g);
         
         
 
@@ -101,7 +101,19 @@ public class Game extends JPanel implements ActionListener {
     
 
     public void resetGame() {
-        
+        removeAll();
+        x = 100;
+        y = 300;
+        theShip = new Ship(x, y);
+        add(theShip);
+        theShip.setBounds(x, y, 86, 57);
+        t.start();
+        endButton.setBounds(683, 660, 100, 100);
+        resetButton.setBounds(533, 660, 150, 100);
+        add(endButton);
+        add(resetButton);
+        revalidate();
+        repaint();
     }
     
     public void actionPerformed(ActionEvent evt) {
