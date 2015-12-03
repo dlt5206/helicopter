@@ -82,6 +82,12 @@ public class Game extends JPanel implements ActionListener {
         g.setColor(Color.BLUE); 
         g.fillRect(0, 0, 800, 100);
         g.fillRect(0, 660, 800, 100);  
+        /*Rectangle shipBounds = new Rectangle(theShip.getX(), theShip.getY(), theShip.getWidth(), theShip.getHeight());
+        Rectangle blockBounds = new Rectangle(theBlock.getX(), theBlock.getY(), theBlock.getWidth(), theBlock.getHeight());
+        if (shipBounds.intersects(blockBounds)) {
+            t.stop(); 
+            JOptionPane.showMessageDialog(null, "Game Over");
+        }*/
     }
     
     public void endGame() {
@@ -119,33 +125,15 @@ public class Game extends JPanel implements ActionListener {
                 t.stop(); 
                 JOptionPane.showMessageDialog(null, "Game Over");
             }
-            theBlock.setX(theBlock.getX() - 5);
+            theBlock.setX(theBlock.getX() - 10);
             if (theBlock.getX() < 0) {
                 remove(theBlock);
                 theBlock = new Block();
                 add(theBlock);
             }
-            /*if (((theShip.getX() + 80) >= theBlock.getX()) && (theShip.getX() + 80) <= (theBlock.getX() + 50)) {
-                if ((theShip.getY() >= theBlock.getY()) && (theShip.getY() <= (theBlock.getY() + 220))) {
-                    t.stop(); 
-                    JOptionPane.showMessageDialog(null, "Game Over");
-                }
-            }
-            if (((theShip.getX() + 80) >= theBlock.getX()) && (theShip.getX() + 80) <= (theBlock.getX() + 40)) {
-                if ((theShip.getY() + 40 >= theBlock.getY()) && (theShip.getY() + 40 <= (theBlock.getY() + 220))) {
-                    t.stop(); 
-                    JOptionPane.showMessageDialog(null, "Game Over");
-                }
-            }*/
-            /*Rectangle block = theBlock.getBounds();
-            Rectangle result = SwingUtilities.computeIntersection(theShip.getX(), theShip.getY(), theShip.getWidth(), theShip.getHeight(), block);
-            if ((result.getHeight() > 0) && (result.getWidth() > 0)) {
-                t.stop(); 
-                JOptionPane.showMessageDialog(null, "Game Over");
-            }*/
-            Area ship = new Area(theBlock.getBounds());
-            Area block = new Area(theBlock.getBounds());
-            if (ship.contains(block.getBounds2D())) {
+            Rectangle shipBounds = new Rectangle(theShip.getX(), theShip.getY(), theShip.getWidth(), theShip.getHeight());
+            Rectangle blockBounds = new Rectangle(theBlock.getX(), theBlock.getY(), theBlock.getWidth(), theBlock.getHeight());
+            if (shipBounds.intersects(blockBounds)) {
                 t.stop(); 
                 JOptionPane.showMessageDialog(null, "Game Over");
             }
