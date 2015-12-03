@@ -25,7 +25,7 @@ public class Block extends JComponent {
     public Block(){
         Random rnd = new Random();
         x = 750;
-        y = rnd.nextInt(200) + 200;
+        y = rnd.nextInt(200) + 180;
     }
     
     public void paintComponent(Graphics g){
@@ -44,8 +44,16 @@ public class Block extends JComponent {
         return height;
     }
     
+    public void setX(int initX) {
+        x = initX;
+    }
+    
     public int getX() {
         return x;
+    }
+    
+    public void setY(int initY) {
+        y = initY;
     }
     
     public int getY() {
