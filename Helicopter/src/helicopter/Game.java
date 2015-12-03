@@ -33,7 +33,7 @@ public class Game extends JPanel implements ActionListener {
     private final static int FRAME_WIDTH = 800;
     
     public Game() {
-        t = new Timer(50, this);
+        t = new Timer(45, this);
         setLayout(null);
         setSize(FRAME_HEIGHT, FRAME_WIDTH);
         endButton.setBounds(683, 660, 100, 100);
