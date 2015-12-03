@@ -56,7 +56,7 @@ public class Game extends JPanel implements ActionListener {
         this.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent arg0) {
                 t.start();
-                y = y - 50;
+                y = y - 70;
                 theShip.setY(y);
                 if (theShip.getY() < 60) {
                     t.stop(); 
@@ -113,7 +113,7 @@ public class Game extends JPanel implements ActionListener {
             t.start();
         }
         if (obj == t) {
-            y = y + 7;
+            y = y + 12;
             theShip.setY(y);
             if (theShip.getY() > 640) {
                 t.stop(); 
