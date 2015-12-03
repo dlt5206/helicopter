@@ -30,9 +30,11 @@ public class Block extends JComponent {
     
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        g.setColor(Color.BLACK);     
-        g.fillRect(x, y, width, height);   
-    }
+        
+        Image myImage = Toolkit.getDefaultToolkit().getImage("images/wall.png");
+        g.drawImage(myImage, 0, 0, this);
+       
+    } 
     
     public int getWidth() {
         return width;
