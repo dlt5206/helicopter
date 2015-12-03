@@ -137,9 +137,15 @@ public class Game extends JPanel implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Game Over");
                 }
             }*/
-            Rectangle block = theBlock.getBounds();
+            /*Rectangle block = theBlock.getBounds();
             Rectangle result = SwingUtilities.computeIntersection(theShip.getX(), theShip.getY(), theShip.getWidth(), theShip.getHeight(), block);
             if ((result.getHeight() > 0) && (result.getWidth() > 0)) {
+                t.stop(); 
+                JOptionPane.showMessageDialog(null, "Game Over");
+            }*/
+            Area ship = new Area(theBlock.getBounds());
+            Area block = new Area(theBlock.getBounds());
+            if (ship.contains(block.getBounds2D())) {
                 t.stop(); 
                 JOptionPane.showMessageDialog(null, "Game Over");
             }
