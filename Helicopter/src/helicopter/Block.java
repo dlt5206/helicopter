@@ -19,19 +19,34 @@ public class Block extends JComponent {
     
     private int width = 50; 
     private int height = 220;
-    private int x = 750; 
-    private int y = 200;
+    private int x;
+    private int y;
     
     public Block(){
-        
+        Random rnd = new Random();
+        x = 750;
+        y = rnd.nextInt(200) + 200;
     }
     
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        
-        g.fillRect(x, y, width, height);
-        g.setColor(Color.BLACK);
-        
-        
+        g.setColor(Color.BLACK);     
+        g.fillRect(x, y, width, height);   
+    }
+    
+    public int getWidth() {
+        return width;
+    }
+    
+    public int getHeight() {
+        return height;
+    }
+    
+    public int getX() {
+        return x;
+    }
+    
+    public int getY() {
+        return y;
     }
 }

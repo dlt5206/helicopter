@@ -30,7 +30,6 @@ public class Game extends JPanel implements ActionListener {
     private JButton endButton = new JButton("End Game");
     private final static int FRAME_HEIGHT = 800;
     private final static int FRAME_WIDTH = 800;
-    private Block blk;
     
     public Game() {
         t = new Timer(50, this);
@@ -53,14 +52,6 @@ public class Game extends JPanel implements ActionListener {
                 resetGame();
             }
         });
-        setVisible(false);
-
-        
-        theShip = new Ship(x, y);
-        add(theShip);
-        theShip.setBounds(x, y, 86, 57);
-        
-        
         
         this.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent arg0) {
@@ -74,25 +65,23 @@ public class Game extends JPanel implements ActionListener {
             }
         });
         
+        theShip = new Ship(x, y);
+        add(theShip);
+        theShip.setBounds(x, y, 86, 57);
         
-        blk = new Block();
-        blk.setBounds(750, 200, 50, 220);
-        add(blk);
+        theBlock = new Block();
+        add(theBlock);
+        //theBlock.setBounds(theBlock.getX(), theBlock.getY(), theBlock.getWidth(), theBlock.getHeight());
+        
+        setVisible(false);
     }
     
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         requestFocusInWindow();
-        g.setColor(Color.BLUE);
-        
+        g.setColor(Color.BLUE); 
         g.fillRect(0, 0, 800, 100);
-        g.fillRect(0, 660, 800, 100);
-        
-        blk = new Block();
-        blk.paintComponent(g);
-        
-        
-
+        g.fillRect(0, 660, 800, 100);   
     }
     
     public void endGame() {
