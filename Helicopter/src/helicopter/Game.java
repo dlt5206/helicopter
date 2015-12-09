@@ -121,7 +121,13 @@ public class Game extends JPanel implements ActionListener {
         add(theShip);
         theShip.setBounds(x, y, 86, 57);
         theBlock = new Block();
+        score = 0;
+        scoreLabel.setBounds(10, 650, 200, 100);
+        scoreLabel.setText("Score: " + Integer.toString(score));
+        scoreLabel.setFont(new Font("Times", Font.BOLD, 20));
+        scoreLabel.setForeground(Color.WHITE);
         add(theBlock);
+        add(scoreLabel);
         t.start();
         endButton.setBounds(683, 660, 100, 100);
         resetButton.setBounds(533, 660, 150, 100);
